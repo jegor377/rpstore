@@ -83,7 +83,7 @@ def show_msg(sense):
 
 		sense.show_message(msg, scroll_speed=0.03, back_colour=bg)
 
-def create_header(file_name):
+def create_header(file_name, interval_in_secs):
 	date = datetime.now().strftime('%d.%m.%Y')
 	time = datetime.now().strftime('%H.%M.%S')
 	with open(file_name, 'a', newline='') as file:
@@ -101,7 +101,7 @@ if __name__ == '__main__':
 
 	loops = int(exit_time_in_mins * 60 / interval_in_secs) - 1
 
-	create_header(file_name)
+	create_header(file_name, interval_in_secs)
 
 	for loop in range(0, loops):
 		with open(file_name, 'a', newline='') as file:
